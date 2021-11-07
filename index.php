@@ -49,28 +49,6 @@
                             <th scope="col">Aksi</th>
                             </tr>
                         </thead>
-
-                        <tbody>
-                            <?php
-                                include('koneksi.php');
-                                $hasil = mysqli_query($koneksi, "SELECT * FROM tbl_matakuliah");
-                                
-                                $no = 1;
-                                
-                                while($mk = mysqli_fetch_assoc($hasil)){
-                            ?>
-                                
-                                <tr>
-                                    <td><?= $no; ?></td>
-                                    <td><?= $mk['kode_mk'];?></td>
-                                    <td><?= $mk['nama_mk']; ?></td>
-                                    <td>
-                                        <a href="matakuliah/edit_matakuliah.php?kode_mk=<?= $mk['kode_mk']; ?>" class="btn btn-sm btn-success">Edit</a>
-                                        <a href="matakuliah/hapus_matakuliah.php?kode_mk=<?= $mk['kode_mk']; ?>" class="btn btn-sm btn-danger">Hapus</a>
-                                    </td>
-                                </tr>
-                            <?php $no++; }?>
-                        </tbody>
                     </table>
                     
                 </div>
